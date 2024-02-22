@@ -1,0 +1,36 @@
+{% extends "../AppStaticSite/layout.html" %}
+
+
+{% block title %}
+    <title>home</title>
+{% endblock %}
+
+
+{% block main %}
+            <div id="pk">{{ path_element }}</div>
+            <h5 class="card-title text-center">Домашняя</h5>
+            <p class="card-text">Содержание домашней</p>
+            {{date_now|date:"l d F Y" }}
+            {% for key, value in data.items %}
+            <h2> значение из словаря {{ key|linenumbers }} :___ {{ value }}</h2>
+            {% endfor %}
+
+
+            {% for key, value in my_person.items %}
+                <h2>  {{key|linenumbers}}: {{ value }} </h2> <br/>
+            {% endfor %}
+
+            {% load static %}
+            <p>
+                Картинка из словаря как переменная {{ my_person.img }}
+                 <img src="{% get_static_prefix %}{{ my_person.img }} " alt="My image" width=5% height=5%>
+
+            </p>
+
+            <p>
+                Картинка из папки images/vally.jpg
+                <img src="{% static  'images/vally.jpg' %}"  height="200px">
+            </p>
+
+{% endblock %}
+

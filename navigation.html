@@ -1,0 +1,31 @@
+
+{# https://django.fun/docs/django/5.0/ref/templates/builtins/#operator #}
+{# https://django.fun/docs/django/5.0/ref/templates/language/ фильтры #}
+
+
+            <ul class="nav nav-tabs card-header-tabs">
+
+                <li class="nav-item">
+                    <a
+                        {% if path_element == "home" %}
+                                class ='nav-link active'
+                        {% else %}
+                                class ='nav-link'
+                        {% endif %}
+                        id="home"  href="{% url 'AppStaticSite:AppStaticSite-home' %}"
+                    > Home </a>
+                </li>
+
+                <li class="nav-item"><a {% if path_element == "form" %}  class ='nav-link active' {% else %} class ='nav-link' {% endif %} id="form"  href="{% url 'AppStaticSite:AppStaticSite-form' %}">Form</a></li>
+                <li class="nav-item"><a {% if path_element == "form_abc" %}  class ='nav-link active'  {% else %} class ='nav-link' {% endif %} id="form_abc"  href="{% url 'AppStaticSite:AppStaticSite-form_abc' %}">Form_abc</a> </li>
+                <li class="nav-item"><a {% if path_element == "store" %}  class ='nav-link active' {% else %} class ='nav-link' {% endif %} id="store"  href="{% url 'AppStaticSite:AppStaticSite-store' %}">store</a> </li>
+            </ul>
+
+
+           <!-- <ul class="nav nav-tabs card-header-tabs">
+{#                <li class="nav-item"><a id="index" class="nav-link" href="{% url 'AppStaticSite:index' %}">Index</a></li>#}
+                <li class="nav-item"><a id="home" class="nav-link" href="{% url 'AppStaticSite:AppStaticSite-home' %}">Home</a></li>
+                <li class="nav-item"><a id="form" class="nav-link" href="{% url 'AppStaticSite:AppStaticSite-form' %}">Form</a></li>
+                <li class="nav-item"><a id="form_abc" class="nav-link" href="{% url 'AppStaticSite:AppStaticSite-form_abc' %}">Form_abc</a>
+                </li>
+            </ul> -->
